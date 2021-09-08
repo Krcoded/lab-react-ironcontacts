@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import "./App.css";
+import contacts from "./contacts.json";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div key={contacts} className="App">
+      <h1>IronContacts</h1>
+      {contacts.map((actors) => {
+        return (
+          <table>
+            <tr>
+              <th> Picture </th>
+              <th> Name: </th>
+              <th>Popularity:</th>
+              <th> wonOscar</th>
+              <th> wonEmmy</th>
+            </tr>
+            <tr>
+              <td>
+                {" "}
+                <img
+                  src={actors.pictureUrl}
+                  width="80px"
+                  height="100px"
+                  alt="actorphoto"
+                />{" "}
+              </td>
+              <td> {actors.name} </td>
+              <td> {actors.popularity}</td>
+              <td>{actors.wonOscar}🏆</td>
+              <td>{actors.wonEmmy}🏆</td>
+            </tr>
+          </table>
+        );
+      })}
     </div>
   );
 }
-
-export default App;
