@@ -8,6 +8,12 @@ function ActorsData() {
   return (
     <div>
       <h2>IronContacts</h2>
+      <div>
+        <button className="btn-rdm"> Add Random Contact </button>
+        <button className="btn-sort-popularity"> Sort by Popularity </button>
+        <button className="btn-sort-name"> Sort by Name </button>
+      </div>
+      
       {actors.map((actors) => {
         return (
           <table>
@@ -33,7 +39,6 @@ function ActorsData() {
               <td>{actors.wonOscar} 🏆</td>
               <td>{actors.wonEmmy}🏆</td>
             </tr>
-            <button className="btn-delete"> delete </button>
           </table>
         );
       })}
